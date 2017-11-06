@@ -3,18 +3,32 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'sh "mvn clean install -Dmaven.test.failure.ignore=true"'
+        sh '''pipeline {
+
+	tools {
+		maven "Maven 3.3.9"
+		jdk "Oracle JDK 8u40"
+	}
+
+	agent label:""
+
+	stages {
+		stage("build"){
+		sh \'mvn clean install -Dmaven.test.failure.ignore=true"
+		}		
+		}
+}'''
+        }
       }
-    }
-    stage('Test') {
-      steps {
-        echo 'Testing..'
+      stage('Test') {
+        steps {
+          echo 'Testing..'
+        }
       }
-    }
-    stage('Deploy') {
-      steps {
-        echo 'Deploying....'
+      stage('Deploy') {
+        steps {
+          echo 'Deploying....'
+        }
       }
     }
   }
-}
