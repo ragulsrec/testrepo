@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'Building..'
+        sh 'bat \'mvn install\''
       }
     }
     stage('Test') {
