@@ -4,7 +4,11 @@ pipeline {
     stage('Build') {
       steps {
         bat(script: 'mvn clean install', returnStatus: true, returnStdout: true)
-        bat(script: 'bat \'\'\'  echo "PATH = ${PATH}"', returnStatus: true, returnStdout: true)
+      }
+    }
+    stage('Execute') {
+      steps {
+        bat(script: 'mvn spring-boot:run', returnStdout: true, returnStatus: true)
       }
     }
   }
