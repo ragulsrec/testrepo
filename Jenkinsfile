@@ -1,4 +1,5 @@
 pipeline {
+<<<<<<< .mine
  agent {
  label ''
  }
@@ -9,4 +10,16 @@ pipeline {
  }
  }
  }
+=======
+  agent any
+  stages {
+    stage('Build') {
+      steps {
+        sh 'mvn install'
+      }
+    }
+  }
+
+
+>>>>>>> .theirs
 }
