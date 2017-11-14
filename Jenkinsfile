@@ -7,7 +7,7 @@ pipeline {
         echo 'Compile'
       }
     }
-    stage('QualityCheck2') {
+    stage('QualityCheck23') {
       steps {
         echo 'Junit run'
         echo 'Sonar check'
