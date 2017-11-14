@@ -43,7 +43,7 @@ pipeline {
     }
     stage('Release') {
       steps {
-        echo 'artifact to nexus repo'
+        echo 'Artifact release to nexus repo'
         echo 'Update JIRA on release details'
         echo 'Send email on release details'
       }
