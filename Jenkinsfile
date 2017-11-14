@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Build2') {
       steps {
         echo 'Code Checkout'
         echo 'Compile'
