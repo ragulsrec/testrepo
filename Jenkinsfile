@@ -29,8 +29,8 @@ pipeline {
         echo 'Upload property files'
         echo 'Verify & Create softlinks'
         echo 'Verify & Create datasource'
-        echo 'Verify and Create messaging configuration'
-        echo 'Verify and deploy artifact'
+        echo 'Verify & Create messaging configuration'
+        echo 'Verify & Deploy artifact'
         echo 'Update JIRA on deployment status'
       }
     }
