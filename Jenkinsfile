@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Code Checkout'
-        echo 'Compile'
+        echo 'Code Compile'
         echo 'Update JIRA on compile status'
       }
     }
