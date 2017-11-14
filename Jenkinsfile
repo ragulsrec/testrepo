@@ -1,44 +1,30 @@
 pipeline {
   agent any
   stages {
-    stage('Build2') {
+    stage('Deploy-Prepare') {
       steps {
-        echo 'Code Checkout'
-        echo 'Compile'
-      }
-    }
-    stage('QualityCheck') {
-      steps {
-        echo 'Junit run'
-        echo 'Sonar check'
-      }
-    }
-    stage('D-Preparation') {
-      steps {
-        echo 'Scan cicd.properties'
+        echo 'Download EAR and Scan cicd.properties'
         echo 'Checkout environment-resource'
         echo 'Checkout datasource-resource'
         echo 'Checkout lgiconfig-resource'
         echo 'Checkout messaging-resource'
       }
     }
-    stage('D-Execution') {
+    stage('Deploy-Execution') {
       steps {
         echo 'Upload property files'
         echo 'Verify & Create softlinks'
-        echo 'Verify & create datasource'
-        echo 'Verify and create messaging configuration'
-      }
-    }
-    stage('Deploy(D)') {
-      steps {
-        echo 'Verify and deploy the artifact'
+        echo 'Verify & Create datasource'
+        echo 'Verify & Create messaging configuration'
+        echo 'Verify & Deploy to environment'
+        echo 'Update JIRA on deployment status'
       }
     }
     stage('Sanity') {
       steps {
         echo 'Execute modulewise sanity'
         echo 'Send email on results'
+        echo 'Update JIRA with sanity report'
       }
     }
   }
