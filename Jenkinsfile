@@ -4,6 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         bat(script: 'mvn clean install', returnStatus: true, returnStdout: true)
+        echo 'Code Checkout'
       }
     }
     stage('Execute') {
