@@ -5,14 +5,14 @@ pipeline {
       steps {
         echo 'Code Checkout'
         echo 'Code Compile'
-        echo 'Update JIRA'
+        echo 'Update JIRA on compile status'
       }
     }
     stage('QualityCheck') {
       steps {
         echo 'Junit run'
         echo 'Sonar check'
-        echo 'Update JIRA with status and sonar reports'
+        echo 'Update JIRA on junit status and attach sonar reports'
       }
     }
     stage('Deploy-Prepare') {
@@ -38,7 +38,7 @@ pipeline {
       steps {
         echo 'Execute modulewise sanity'
         echo 'Send email on results'
-        echo 'Update JIRA on build status'
+        echo 'Update JIRA with sanity report'
       }
     }
   }
