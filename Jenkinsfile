@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Code Checkout'
-        echo 'Compile'
+        echo 'Code Compile'
         echo 'Update JIRA'
       }
     }
@@ -15,7 +15,7 @@ pipeline {
         echo 'Update JIRA with status and sonar reports'
       }
     }
-    stage('D-Preparation') {
+    stage('Deploy-Prepare') {
       steps {
         echo 'Scan cicd.properties'
         echo 'Checkout environment-resource'
@@ -24,12 +24,12 @@ pipeline {
         echo 'Checkout messaging-resource'
       }
     }
-    stage('D-Execution') {
+    stage('Deploy-Execution') {
       steps {
         echo 'Upload property files'
         echo 'Verify & Create softlinks'
-        echo 'Verify & create datasource'
-        echo 'Verify and create messaging configuration'
+        echo 'Verify & Create datasource'
+        echo 'Verify and Create messaging configuration'
         echo 'Verify and deploy artifact'
         echo 'Update JIRA on deployment status'
       }
