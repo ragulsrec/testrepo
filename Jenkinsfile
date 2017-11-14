@@ -46,6 +46,7 @@ pipeline {
         echo 'Release artifact to nexus repo'
         echo 'Update JIRA on release details'
         echo 'Send email on release details'
+        echo 'Release artifact to nexus repo'
       }
     }
   }
