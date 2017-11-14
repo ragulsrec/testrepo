@@ -28,11 +28,7 @@ pipeline {
         echo 'Verify & Create softlinks'
         echo 'Verify & create datasource'
         echo 'Verify and create messaging configuration'
-      }
-    }
-    stage('Deploy(D)') {
-      steps {
-        echo 'Verify and deploy the artifact'
+        echo 'Verify and deploy artifact'
       }
     }
     stage('Sanity') {
