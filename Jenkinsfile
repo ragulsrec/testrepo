@@ -28,9 +28,9 @@ pipeline {
       steps {
         echo 'Upload property files'
         echo 'Verify & Create softlinks'
-        echo 'Verify & create datasource'
-        echo 'Verify and create messaging configuration'
-        echo 'Verify and Deploy on IT environment'
+        echo 'Verify & Create datasource'
+        echo 'Verify & Create messaging configuration'
+        echo 'Verify & Deploy on IT environment'
         echo 'Update JIRA on deployment status'
       }
     }
