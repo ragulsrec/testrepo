@@ -3,13 +3,42 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        bat(script: 'mvn clean install', returnStatus: true, returnStdout: true)
         echo 'Code Checkout'
+        echo 'Compile'
       }
     }
-    stage('Execute') {
+    stage('QualityCheck') {
       steps {
-        bat(script: 'mvn spring-boot:run', returnStdout: true, returnStatus: true)
+        echo 'Junit run'
+        echo 'Sonar check'
+      }
+    }
+    stage('D-Preparation') {
+      steps {
+        echo 'Scan cicd.properties'
+        echo 'Checkout environment-resource'
+        echo 'Checkout datasource-resource'
+        echo 'Checkout lgiconfig-resource'
+        echo 'Checkout messaging-resource'
+      }
+    }
+    stage('D-Execution') {
+      steps {
+        echo 'Upload property files'
+        echo 'Verify & Create softlinks'
+        echo 'Verify & create datasource'
+        echo 'Verify and create messaging configuration'
+      }
+    }
+    stage('Deploy(D)') {
+      steps {
+        echo 'Verify and deploy the artifact'
+      }
+    }
+    stage('Sanity') {
+      steps {
+        echo 'Execute modulewise sanity'
+        echo 'Send email on results'
       }
     }
   }
