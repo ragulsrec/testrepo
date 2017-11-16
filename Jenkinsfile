@@ -5,7 +5,7 @@ pipeline {
       steps {
         echo 'Code Checkout123'
         echo 'Compile'
-        svn 'http://172.16.77.20/dmwirepo/peal-api-2.0/trunk/peal-user-api'
+        build 'Resource-release-job'
       }
     }
     stage('QualityCheck') {
