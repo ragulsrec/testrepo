@@ -5,7 +5,8 @@ pipeline {
       steps {
         echo 'Code Checkout123'
         echo 'Compile'
-        build 'Resource-release-job'
+        input(message: 'Enter the module to be built', id: 'build_path')
+        build(propagate: true, job: 'cicd-checkout')
       }
     }
     stage('QualityCheck') {
