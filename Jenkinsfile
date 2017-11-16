@@ -5,7 +5,6 @@ pipeline {
       steps {
         echo 'Code Checkout123'
         echo 'Compile'
-        input(message: 'Enter the module to be built', id: 'build_path')
         build(propagate: true, job: 'cicd-checkout')
       }
     }
@@ -43,5 +42,8 @@ pipeline {
         echo 'Send email on results'
       }
     }
+  }
+  environment {
+    build_path = 'http://172.16.77.20/dmwirepo/peal-api-2.0/trunk/peal-user-api'
   }
 }
