@@ -5,7 +5,7 @@ pipeline {
       steps {
         echo 'Code Checkout123'
         echo 'Compile'
-        build(propagate: true, job: 'cicd-checkout')
+        svn 'http://172.16.77.20/dmwirepo/Jenkins/cicd-modules/pipeline-scripts/trunk'
       }
     }
     stage('QualityCheck') {
