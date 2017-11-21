@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'Code Checkout'
-        echo 'Code Compile'
+        echo 'Code Checkout : $build_path'
+        echo 'Code Compile : $artifact_id'
         echo 'Update JIRA on compile status'
       }
     }
