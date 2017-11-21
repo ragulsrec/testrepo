@@ -42,4 +42,9 @@ pipeline {
       }
     }
   }
+  environment {
+    build_path = 'http://172.16.77.20/dmwirepo/Jenkins/cicd-modules/datasource-resource/trunk'
+    artifact_id = 'datasource-resource'
+    environment = 'http://172.16.76.128:8001'
+  }
 }
