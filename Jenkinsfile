@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'Code Checkout : ${env.build_path}'
-        echo 'Code Compile : ${env.artifact_id}'
+        echo 'Code Checkout : ${env.BUILD_ID}'
+        echo 'Code Compile : ${artifact_id}'
         echo 'Update JIRA on compile status'
       }
     }
